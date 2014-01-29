@@ -4,9 +4,9 @@ import os
 import telnetlib
 import sys
 
-agentIP = sys.argv[1]
+host = sys.argv[1]
 
-tn = telnetlib.Telnet(agentIP,'6556')
+tn = telnetlib.Telnet(host,'6556')
 #print tn.read_all()
 yourResult = tn.read_all()
 yourResult = yourResult.split('\n')
