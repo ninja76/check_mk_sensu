@@ -2,18 +2,15 @@
 import time
 import os
 import telnetlib
+import sys
 
-tn = telnetlib.Telnet('192.168.0.2','6556')
+agentIP = sys.argv[1]
+
+tn = telnetlib.Telnet(agentIP,'6556')
 #print tn.read_all()
 yourResult = tn.read_all()
 yourResult = yourResult.split('\n')
 tn.close()
-# For testing I am just using a cached copy.  Need to stream in via nc 
-#inputfile = open("out.txt", 'r')
-#yourResult = os.system("telnet 192.168.0.2 6556")
-# Placeholder until I bring it in from the command line
-host = "windows.vizualmedium.com"
-#yourResult = [line.split(',') for line in inputfile.readlines()]
 c = 0
 cc = 0
 cpu_line = 0
