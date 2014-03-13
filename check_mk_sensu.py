@@ -6,14 +6,16 @@ import sys
 
 host = sys.argv[1]
 
+#open connection to port 6556 and parase output
 tn = telnetlib.Telnet(host,'6556')
-#print tn.read_all()
 yourResult = tn.read_all()
 yourResult = yourResult.split('\n')
 tn.close()
 c = 0
 cc = 0
 cpu_line = 0
+
+#Get Epoch timestamp
 ts = str(time.time()).split('.')[0]
 for i in yourResult:
 	c += 1
