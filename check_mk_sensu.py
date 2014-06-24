@@ -26,7 +26,8 @@ for i in yourResult:
 			print host + '.memory' + ' ' + str(yourResult[c+x]).split()[0][:-1]  + ' ' + str(yourResult[c+x]).split()[1] + ' ' + str(ts)
 	if '<<<df>>>' in i:
 		cc = c
-		while str(yourResult[cc])[2:-4] not in '<<<ps>>>':		
+		while str(yourResult[cc])[2:-4] not in '<<<ps>>>':
+			# Kick out Graphite formatted data
 			print host + '.' + 'disk' + '.' + str(yourResult[cc]).split()[-1][:-2] + ' ' + 'Total' + ' ' + str(yourResult[cc]).split()[2]  + ' ' + str(ts)
 			print host + '.' + 'disk' + '.' + str(yourResult[cc]).split()[-1][:-2] + ' ' + 'Used' + ' ' + str(yourResult[cc]).split()[3] + ' ' + str(ts)
 			print host + '.' + 'disk' + '.' + str(yourResult[cc]).split()[-1][:-2] + ' ' + 'Free' + ' ' + str(yourResult[cc]).split()[4] + ' ' + str(ts)
