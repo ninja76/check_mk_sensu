@@ -23,6 +23,7 @@ for i in yourResult:
 	data = i;
 	if '<<<mem>>>' in i:
 		for x in range(0,8):
+			# Kick out Graphite formatted data
 			print host + '.memory' + ' ' + str(yourResult[c+x]).split()[0][:-1]  + ' ' + str(yourResult[c+x]).split()[1] + ' ' + str(ts)
 	if '<<<df>>>' in i:
 		cc = c
