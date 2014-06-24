@@ -21,10 +21,12 @@ for i in yourResult:
 	c += 1
 	var = 'mem'
 	data = i;
+	# Parse Memory Data
 	if '<<<mem>>>' in i:
 		for x in range(0,8):
 			# Kick out Graphite formatted data
 			print host + '.memory' + ' ' + str(yourResult[c+x]).split()[0][:-1]  + ' ' + str(yourResult[c+x]).split()[1] + ' ' + str(ts)
+	# Parse Disk Data			
 	if '<<<df>>>' in i:
 		cc = c
 		while str(yourResult[cc])[2:-4] not in '<<<ps>>>':
