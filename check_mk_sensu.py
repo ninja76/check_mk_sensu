@@ -5,9 +5,10 @@ import telnetlib
 import sys
 
 host = sys.argv[1]
+port = "6556"
 
 #open connection to port 6556 and parase output
-tn = telnetlib.Telnet(host,'6556')
+tn = telnetlib.Telnet(host, port)
 yourResult = tn.read_all()
 yourResult = yourResult.split('\n')
 tn.close()
